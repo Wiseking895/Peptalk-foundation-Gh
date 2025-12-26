@@ -1,0 +1,168 @@
+/* ------------------- Tailwind Directives ------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------- Global Resets ------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #fefefe;
+  color: #1f2937; /* Tailwind gray-800 */
+  line-height: 1.6;
+}
+
+/* ------------------- Scrollbar Styling ------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #facc15; /* Tailwind yellow-400 */
+  border-radius: 4px;
+  border: 2px solid #f1f1f1;
+}
+
+/* ------------------- Links ------------------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #fbbf24; /* Tailwind yellow-300 */
+}
+
+/* ------------------- Video Background Overlay ------------------- */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* ------------------- Hero Section ------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  padding: 1rem;
+}
+
+/* =======================
+   Component Layer
+   ======================= */
+@layer components {
+  /* ------------------- Cards ------------------- */
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden
+           hover:scale-105 transform transition-transform;
+  }
+
+  .card img {
+    @apply w-full h-48 object-cover;
+  }
+
+  .card-body {
+    @apply p-4;
+  }
+
+  .card-title {
+    @apply font-bold text-xl mb-2;
+  }
+
+  .card-description {
+    @apply text-gray-700;
+  }
+
+  .card-link {
+    @apply mt-4 inline-block text-yellow-400
+           hover:text-yellow-500 font-semibold;
+  }
+
+  /* ------------------- Buttons ------------------- */
+  .btn {
+    @apply bg-yellow-400 text-black font-bold
+           py-2 px-4 rounded
+           hover:bg-yellow-500 transition-colors;
+  }
+
+  /* ------------------- Section Titles ------------------- */
+  .section-title {
+    @apply text-center mb-8;
+  }
+
+  .section-title h2 {
+    @apply text-3xl font-bold;
+  }
+
+  .section-title p {
+    @apply text-gray-600 mt-2;
+  }
+
+  /* ------------------- Footer ------------------- */
+  footer {
+    @apply bg-gray-900 text-white mt-20;
+  }
+
+  footer a {
+    @apply hover:text-yellow-400 transition-colors;
+  }
+}
+
+/* ------------------- Responsive Typography ------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.125rem;
+  }
+}
