@@ -23,7 +23,7 @@ export default function Contact() {
           <button className="bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition">Send Message</button>
         </form>
       </section>
-      <Footer />
+      
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function Education() {
           ))}
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 }

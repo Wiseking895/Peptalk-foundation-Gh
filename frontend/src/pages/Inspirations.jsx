@@ -43,7 +43,7 @@ export default function Inspirations() {
         </div>
       </section>
 
-      <Footer />
+     
     </div>
   );
 }

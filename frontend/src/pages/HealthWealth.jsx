@@ -22,7 +22,7 @@ export default function HealthWealth() {
         <p>Understand how to manage money, start businesses, and plan for long-term wealth.</p>
       </section>
 
-      <Footer />
+      
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function About() {
           Expand our educational programs, provide marketplace support, inspire through stories and testimonies, and help thousands achieve their career and life goals.
         </p>
       </section>
-      <Footer />
+      
     </div>
   );
 }

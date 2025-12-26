@@ -7,8 +7,8 @@ export default function PageLayout({ children }) {
     <>
       <Navbar />
       <main>{children}</main>
+      <FloatingDonateButton /> {/* Floating Donate button */}
       <Footer />
-      <FloatingDonateButton />
     </>
   );
 }

@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+import PageLayout from "../layouts/PageLayout";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -8,94 +10,20 @@ import Marketplace from "../pages/Marketplace";
 import Inspirations from "../pages/Inspirations";
 import Donate from "../pages/Donate";
 import NotFound from "../pages/NotFound";
-import PageLayout from "../layouts/PageLayout"; // Layout with Navbar, Footer, Floating Donate button
-import { Routes, Route } from "react-router-dom";
 
 export default function AppRouter() {
   return (
     <Routes>
-      {/* Wrap all pages in PageLayout */}
-      <Route
-        path="/"
-        element={
-          <PageLayout>
-            <Home />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <PageLayout>
-            <About />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <PageLayout>
-            <Contact />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/education"
-        element={
-          <PageLayout>
-            <Education />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/health-wealth"
-        element={
-          <PageLayout>
-            <HealthWealth />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/career-advice"
-        element={
-          <PageLayout>
-            <CareerAdvice />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/marketplace"
-        element={
-          <PageLayout>
-            <Marketplace />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/inspirations"
-        element={
-          <PageLayout>
-            <Inspirations />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/donate"
-        element={
-          <PageLayout>
-            <Donate />
-          </PageLayout>
-        }
-      />
-      {/* Catch-all 404 */}
-      <Route
-        path="*"
-        element={
-          <PageLayout>
-            <NotFound />
-          </PageLayout>
-        }
-      />
+      <Route path="/" element={<PageLayout><Home /></PageLayout>} />
+      <Route path="/about" element={<PageLayout><About /></PageLayout>} />
+      <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
+      <Route path="/education" element={<PageLayout><Education /></PageLayout>} />
+      <Route path="/health-wealth" element={<PageLayout><HealthWealth /></PageLayout>} />
+      <Route path="/career-advice" element={<PageLayout><CareerAdvice /></PageLayout>} />
+      <Route path="/marketplace" element={<PageLayout><Marketplace /></PageLayout>} />
+      <Route path="/inspirations" element={<PageLayout><Inspirations /></PageLayout>} />
+      <Route path="/donate" element={<PageLayout><Donate /></PageLayout>} />
+      <Route path="*" element={<PageLayout><NotFound /></PageLayout>} />
     </Routes>
   );
 }

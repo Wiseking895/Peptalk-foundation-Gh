@@ -20,7 +20,7 @@ export default function CareerAdvice() {
         <p>Learn which careers will thrive in the next 5 years and how to prepare for them.</p>
       </section>
 
-      <Footer />
+      
     </div>
   );
 }
