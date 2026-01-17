@@ -14,6 +14,7 @@ export default function Education() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <section id="video-background-section">
       <VideoBackground videoSrc="/videos/education.mp4">
         <div className="text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Education</h1>
@@ -22,6 +23,7 @@ export default function Education() {
           </p>
         </div>
       </VideoBackground>
+      </section>
 
       <section className="py-16 px-6 text-center max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-8">Courses & Tutorials</h2>

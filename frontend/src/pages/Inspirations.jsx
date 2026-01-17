@@ -18,12 +18,14 @@ export default function Inspirations() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <section id="video-background-section">
       <VideoBackground videoSrc="/videos/inspirations.mp4">
         <div className="text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Inspirations</h1>
           <p className="text-lg md:text-2xl">Stories, testimonies, and motivational content to inspire better living.</p>
         </div>
       </VideoBackground>
+      </section>
 
       <section className="py-16 px-6 text-center max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-8">Stories</h2>

@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import StoryCard from "../components/StoryCard";
 import TestimonyCard from "../components/TestimonyCard";
+import AboutHighlights from "../components/AboutHighlights";
 
 export default function Home() {
   const stories = [
@@ -19,7 +20,14 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <HeroSection />
+
+      {/* Video Background Section for scroll detection */}
+      <section id="video-background-section">
+        <HeroSection />
+      </section>
+      <section>
+      <AboutHighlights />
+      </section>
 
       {/* Overview Section */}
       <section className="py-16 px-6 bg-gray-100 text-center">

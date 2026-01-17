@@ -6,6 +6,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <section id="video-background-section">
       <VideoBackground videoSrc="/videos/contact.mp4">
         <div className="text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
@@ -14,6 +15,7 @@ export default function Contact() {
           </p>
         </div>
       </VideoBackground>
+      </section>
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
         <form className="flex flex-col gap-4 bg-white/20 p-8 rounded shadow-md">
