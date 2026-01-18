@@ -6,11 +6,53 @@ import TestimonyCard from "../components/TestimonyCard";
 import AboutHighlights from "../components/AboutHighlights";
 
 export default function Home() {
-  const stories = [
-    { image: "/images/story1.jpg", title: "Success Story 1", description: "Brief description." },
-    { image: "/images/story2.jpg", title: "Success Story 2", description: "Brief description." },
-    { image: "/images/story3.jpg", title: "Success Story 3", description: "Brief description." },
+  const pages = [
+    {
+      title: "Education",
+      description: "Learn basics, BECE & WASSCE prep, and career guidance.",
+      link: "/education",
+      image: "/images/img8.jpg",
+    },
+    {
+      title: "Health & Wealth",
+      description: "Insights on health, wealth creation, and personal growth.",
+      link: "/health-wealth",
+      image: "/images/img9.png",
+    },
+    {
+      title: "Marketplace",
+      description: "Browse products and services we offer.",
+      link: "/marketplace",
+      image: "/images/img10.png",
+    },
+    {
+      title: "Inspirations",
+      description: "Stories, testimonies, and motivational content.",
+      link: "/inspirations",
+      image: "/images/img11.png",
+    },
   ];
+
+  const stories = [
+  {
+    image: "/images/story1.jpg",
+    title: "Spreading Christmas Joy at Fawoade Orphanage",
+    description: "In December 2025, we visited Fawoade Orphanage in Kumasi to celebrate Christmas with less privileged children. The day was filled with gifts, food, laughter, and festive cheer, spreading love and hope while creating unforgettable memories for the children and everyone involved.",
+    position: "50% 30%",
+  },
+  {
+    image: "/images/img8.jpg",
+    title: "Inspiring Pupils in Adwumakase",
+    description: "In early 2025, we visited Adwumakase, Ahafo Region, to motivate pupils to study diligently and pursue a bright future. The visit encouraged focus, determination, and belief in their potential.",
+    position: "50% 5%", // head higher
+  },
+  {
+    image: "/images/story3.jpg",
+    title: "Bringing Joy and Hope Through Haircuts",
+    description: "We organized a fun hair-cutting session for orphans, filling the day with laughter and smiles. The activity aimed to inspire the children with hope, showing them that the world cares and supports their dreams.",
+    position: "50% 20%",
+  },
+];
 
   const testimonies = [
     { name: "John Doe", testimony: "This platform changed my life!", avatar: "/images/avatar1.jpg" },
@@ -21,52 +63,62 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      {/* Video Background Section for scroll detection */}
+      {/* Hero Section */}
       <section id="video-background-section">
         <HeroSection />
       </section>
+
       <section>
-      <AboutHighlights />
+        <AboutHighlights />
       </section>
 
-      {/* Overview Section */}
-      <section className="py-16 px-6 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold mb-8">Explore Our Pages</h2>
+      {/* Explore Our Pages Section */}
+      <section className="py-16 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-12">Explore Our Pages</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          <div className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-            <h3 className="font-bold text-xl mb-2">Education</h3>
-            <p>Learn basics, BECE & WASSCE prep, and career guidance.</p>
-            <a href="/education" className="mt-4 inline-block text-blue-600 hover:underline">Explore</a>
-          </div>
-          <div className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-            <h3 className="font-bold text-xl mb-2">Health & Wealth</h3>
-            <p>Insights on health, wealth creation, and personal growth.</p>
-            <a href="/health-wealth" className="mt-4 inline-block text-blue-600 hover:underline">Explore</a>
-          </div>
-          <div className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-            <h3 className="font-bold text-xl mb-2">Marketplace</h3>
-            <p>Browse products and services we offer.</p>
-            <a href="/marketplace" className="mt-4 inline-block text-blue-600 hover:underline">Explore</a>
-          </div>
-          <div className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-            <h3 className="font-bold text-xl mb-2">Inspirations</h3>
-            <p>Stories, testimonies, and motivational content.</p>
-            <a href="/inspirations" className="mt-4 inline-block text-blue-600 hover:underline">Explore</a>
-          </div>
-        </div>
-      </section>
+          {pages.map((page, index) => (
+            <div
+              key={index}
+              className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:scale-105 min-h-[300px]"
+            >
+              {/* Blurred background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center filter blur-sm scale-110"
+                style={{ backgroundImage: `url(${page.image})` }}
+              ></div>
 
-      {/* Stories Section */}
-      <section className="py-16 px-6 bg-gray-50 text-center">
-        <h2 className="text-3xl font-bold mb-8">Our Stories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {stories.map((story, index) => (
-            <StoryCard key={index} {...story} />
+              {/* Color overlay */}
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              {/* Text content */}
+              <div className="relative z-10 p-6 flex flex-col justify-center">
+                <h3 className="font-bold text-xl mt-2 text-white">{page.title}</h3>
+                <p className="text-white mt-12">{page.description}</p>
+                <a
+                  href={page.link}
+                  className="mt-auto inline-block text-blue-600 font-semibold hover:underline"
+                >
+                  Explore
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Testimonies Section */}
+      {/* Stories Section */}
+<section className="py-16 bg-gray-50 text-center">
+  <h2 className="text-3xl font-bold mb-12 px-6">Our Stories</h2>
+
+  {/* Full-width hero-style stories */}
+  <div className="flex flex-col">
+    {stories.map((story, index) => (
+      <StoryCard key={index} {...story} />
+    ))}
+  </div>
+</section>
+
+      {/* Testimonials Section */}
       <section className="py-16 px-6 bg-gray-100 text-center">
         <h2 className="text-3xl font-bold mb-8">Testimonials</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">

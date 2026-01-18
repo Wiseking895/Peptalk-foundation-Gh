@@ -1,9 +1,24 @@
-export default function StoryCard({ image, title, description }) {
+export default function StoryCard({ image, title, description, position = "50% 30%" }) {
   return (
-    <div className="bg-white/20 backdrop-blur-md rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition w-full max-w-sm mx-auto text-center p-4">
-      <img src={image} alt={title} className="w-full h-48 object-cover mb-4 rounded" />
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-sm">{description}</p>
-    </div>
+    <section
+      className="w-full min-h-[50vh] md:min-h-[105vh] relative flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: position,
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative z-10 max-w-4xl px-6 text-center text-white">
+        <h3 className="text-4xl md:text-5xl font-bold mb-6">
+          {title}
+        </h3>
+        <p className="text-lg md:text-xl leading-relaxed">
+          {description}
+        </p>
+      </div>
+    </section>
   );
 }

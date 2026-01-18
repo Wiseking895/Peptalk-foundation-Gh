@@ -10,10 +10,15 @@ import Marketplace from "../pages/Marketplace";
 import Inspirations from "../pages/Inspirations";
 import Donate from "../pages/Donate";
 import NotFound from "../pages/NotFound";
+import SplashScreen from "../components/SplashScreen";
 
 export default function AppRouter() {
   return (
     <Routes>
+      {/* Splash screen route */}
+      <Route path="/splash" element={<SplashScreen />} />
+
+      {/* Main routes */}
       <Route path="/" element={<PageLayout><Home /></PageLayout>} />
       <Route path="/about" element={<PageLayout><About /></PageLayout>} />
       <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
@@ -23,6 +28,8 @@ export default function AppRouter() {
       <Route path="/marketplace" element={<PageLayout><Marketplace /></PageLayout>} />
       <Route path="/inspirations" element={<PageLayout><Inspirations /></PageLayout>} />
       <Route path="/donate" element={<PageLayout><Donate /></PageLayout>} />
+
+      {/* Fallback */}
       <Route path="*" element={<PageLayout><NotFound /></PageLayout>} />
     </Routes>
   );
